@@ -1,5 +1,5 @@
 ## Reading the dataset (Home ASH) into R
-powerdata.ash <- read.csv("/home/gsumit/Desktop/Datasets/powerdata3.csv", header = T, stringsAsFactors = F)
+powerdata.ash <- read.csv("/home/Desktop/Datasets/powerdata.csv", header = T, stringsAsFactors = F)
 
 ## Cleaning the variable names
 names(powerdata.ash) <- tolower(gsub("\\.", "", names(powerdata.ash)))
@@ -60,8 +60,8 @@ for(i in 3:(length(powerdata.ash$state)-1))
   e <- abs(powerdata.ash$mavchange[i-1] - powerdata.ash$mavchange[i-2])
   f <- abs(powerdata.ash$mavchange[i] - powerdata.ash$mavchange[i+1])
   powerdata.ash$newstate[i] <- ifelse(powerdata.ash$state[i] == "EVENT", 
-                                      ifelse(powerdata.ash$state[i] == powerdata.ash$state[i-1] & powerdata.ash$state[i-1] != powerdata.ash$state[i-2] & (a <= b | d <= e), "ON", powerdata.ash$state[i]),
-                                      ifelse(powerdata.ash$state[i] != powerdata.ash$state[i-1] & (a >= c | d >= f), "OFF", powerdata.ash$state[i]))
+  ifelse(powerdata.ash$state[i] == powerdata.ash$state[i-1] & powerdata.ash$state[i-1] != powerdata.ash$state[i-2] & (a <= b | d <= e), "ON", powerdata.ash$state[i]),
+  ifelse(powerdata.ash$state[i] != powerdata.ash$state[i-1] & (a >= c | d >= f), "OFF", powerdata.ash$state[i]))
   powerdata.ash$newstate[1:2] <- powerdata.ash$state[1:2]
   powerdata.ash$newstate[nrow(powerdata.ash)] <- powerdata.ash$state[nrow(powerdata.ash)] 
 }
