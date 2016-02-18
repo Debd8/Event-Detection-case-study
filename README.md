@@ -25,12 +25,12 @@ Hot water heater consumption behavior:
 
 Hot water heaters have 2 distinct consumption behaviors
 
-1. Temperature Maintenance Cycle
+Temperature Maintenance Cycle
 
 During the period of a day, hot water heaters turn on and off at different times in order to maintain the temperature of the hot water. They do this many times a day and the cycle usually
 lasts between 4-8 minutes.
 
-2. Heating Cycle
+Heating Cycle
 
 A heating cycle is described as a cycle that occurs once a large amount of hot water has been
 consumed inside the tank. This usually occurs after a shower, bath or even laundry. When this
