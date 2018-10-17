@@ -1,5 +1,5 @@
 ## Reading the dataset (Home ASH) into R
-powerdata.ash <- read.csv("/home/Desktop/Datasets/powerdata.csv", header = T, stringsAsFactors = F)
+powerdata.ash <- read.csv(".../Datasets/powerdata.csv", header = T, stringsAsFactors = F)
 
 ## Cleaning the variable names
 names(powerdata.ash) <- tolower(gsub("\\.", "", names(powerdata.ash)))
